@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V-Tech Landing Page</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>V-Tech</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
         
@@ -15,22 +16,148 @@
         
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background-color: #111;
             color: #fff;
             font-family: 'Tektur', sans-serif;
+            padding: 10px;
         }
         
         h1 {
             font-size: 4rem;
             text-transform: uppercase;
             letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+        
+        .profiles-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .profile {
+            text-align: center;
+        }
+        
+        .profile a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .profile a:hover {
+            color: #4d8bff;
+        }
+        
+        .rotate-notice {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .rotate-notice p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .rotate-icon {
+            width: 70px;
+            height: 100px;
+            border: 3px solid white;
+            border-radius: 10px;
+            position: relative;
+            animation: rotate 2s infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(90deg); }
+            50% { transform: rotate(90deg); }
+            75% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+        }
+        
+        /* Media query for portrait orientation on mobile devices */
+        @media only screen and (max-width: 767px) and (orientation: portrait) {
+            .rotate-notice {
+                display: flex;
+            }
+            
+            .profiles-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        /* For landscape orientation, ensure proper display */
+        @media only screen and (max-width: 767px) and (orientation: landscape) {
+            .profiles-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+            
+            .profile a {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <h1>V-Tech</h1>
+    
+    <div class="profiles-container">
+
+        <div class="profile">
+            <a href="https://www.linkedin.com/in/vanesh-/" target="_blank">Vanesh</a>
+        </div>
+        
+
+        <div class="profile">
+            <a href="https://www.linkedin.com/in/vinay64/" target="_blank">Vinay</a>
+        </div>
+        
+
+        <div class="profile">
+            <a href="https://www.linkedin.com/in/tmsagarofficial/" target="_blank">Sagar</a>
+        </div>
+        
+
+        <div class="profile">
+            <a href="https://www.linkedin.com/in/vishal-s-murali/" target="_blank">Vishal</a>
+        </div>
+        
+
+        <div class="profile">
+            <a href="https://www.linkedin.com/in/vivek-gurudutt-k-466936267/" target="_blank">Vivek</a>
+        </div>
+    </div>
+    
+
+    <div class="rotate-notice">
+        <div class="rotate-icon"></div>
+        <p>Please rotate your device to landscape mode for a better experience</p>
+    </div>
 </body>
 </html>
